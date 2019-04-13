@@ -20,7 +20,8 @@ module "infra" {
   dns_suffix                           = "${var.dns_suffix}"
   internetless                         = "${var.internetless}"
   create_blobstore_service_account_key = "${var.create_blobstore_service_account_key}"
-  internal_access_source_ranges        = ["${var.pks_cidr}", "${var.pks_services_cidr}"]
+  internal_access_source_ranges        = ["${var.pas_cidr}","${var.services_cidr}","${var.pks_cidr}", "${var.pks_services_cidr}"]
+
 }
 
 module "ops_manager" {
