@@ -57,11 +57,11 @@ variable "zones" {
   default = []
 }
 
-variable "optional_target_tag" {
+variable "ssl_certificate" {
+  type    = "string"
   default = ""
 }
 
-variable "ssl_certificate" {
-  type = "string"
+variable "optional_target_tag" {
   default = ""
 }

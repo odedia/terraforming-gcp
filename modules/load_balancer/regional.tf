@@ -4,11 +4,6 @@ resource "google_compute_address" "lb" {
   count = "${var.count}"
 }
 
-// Static IP address for forwarding rule
-resource "google_compute_address" "cf-pks-harbor" {
-  name = "${var.env_name}-cf-pks-harbor"
-}
-
 resource "google_compute_forwarding_rule" "lb" {
   name        = "${var.env_name}-${var.name}-lb-${count.index}"
   ip_address  = "${google_compute_address.lb.address}"
@@ -26,20 +21,3 @@ resource "google_compute_target_pool" "lb" {
 
   count = "${var.count}"
 }
-
-resource "google_compute_target_pool" "cf-pks-harbor" {
-  name = "${var.env_name}-cf-pks-harbor"
-  instances = [ ] // leave commented out - not just empty - BOSH will manage thru the tile
-}
-
-
-resource "google_compute_forwarding_rule" "cf-pks-harbor" {
-  name        = "${var.env_name}-cf-pks-harbor"
-  target      = "${google_compute_target_pool.cf-pks-harbor.self_link}"
-
-  port_range  = "443"
-  ip_protocol = "TCP"
-  ip_address  = "${google_compute_address.cf-pks-harbor.address}"
-}
-
-

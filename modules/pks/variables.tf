@@ -35,7 +35,3 @@ variable "enable_gcr" {
 variable "pks_services_cidr" {
   type = "string"
 }
-
-variable "ssl_cert" {
-  type = "string"
-}
