@@ -41,7 +41,6 @@ resource "google_compute_target_pool" "cf-pks-harbor" {
 resource "google_compute_forwarding_rule" "cf-pks-harbor" {
   name        = "${var.env_name}-cf-pks-harbor"
   target      = "${google_compute_target_pool.cf-pks-harbor.self_link}"
-  ssl_certificate = "${var.ssl_cert}"
 
   port_range  = "443"
   ip_protocol = "TCP"
