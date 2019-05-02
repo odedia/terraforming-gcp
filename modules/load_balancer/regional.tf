@@ -4,6 +4,11 @@ resource "google_compute_address" "lb" {
   count = "${var.count}"
 }
 
+// Static IP address for forwarding rule
+resource "google_compute_address" "cf-pks-harbor" {
+  name = "${var.env_name}-cf-pks-harbor"
+}
+
 resource "google_compute_forwarding_rule" "lb" {
   name        = "${var.env_name}-${var.name}-lb-${count.index}"
   ip_address  = "${google_compute_address.lb.address}"
