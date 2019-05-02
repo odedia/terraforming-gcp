@@ -32,10 +32,10 @@ resource "google_compute_address" "cf-pks-harbor" {
 }
 
 // TCP target pool
-resource "google_compute_target_pool" "cf-pks-harbor" {
-  name = "${var.env_name}-cf-pks-harbor"
+//resource "google_compute_target_pool" "cf-pks-harbor" {
+//  name = "${var.env_name}-cf-pks-harbor"
   //instances = [ ] // leave commented out - not just empty - BOSH will manage thru the tile
-}
+//}
 
 // TCP forwarding rule
 //resource "google_compute_forwarding_rule" "cf-pks-harbor" {
