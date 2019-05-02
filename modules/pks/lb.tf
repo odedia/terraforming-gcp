@@ -6,7 +6,7 @@ module "api" {
   global  = false
   count   = 1
   network = "${var.network_name}"
-  ssl_certificate = "${var.ssl_certificate}"
+  ssl_certificate = "${var.ssl_cert}"
 
   ports                 = ["9021", "8443"]
   lb_name               = "${var.env_name}-pks-api"
@@ -24,7 +24,7 @@ module "harbor" {
   global  = false
   count   = 1
   network = "${var.network_name}"
-  ssl_certificate = "${var.ssl_certificate}"
+  ssl_certificate = "${var.ssl_cert}"
 
   ports                 = ["443"]
   lb_name               = "${var.env_name}-cf-pks-harbor"
