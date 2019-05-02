@@ -7,3 +7,4 @@ resource "google_dns_record_set" "wildcard-pks-dns" {
 
   rrdatas = ["${module.api.address}"]
 }
+

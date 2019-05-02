@@ -82,3 +82,6 @@ resource "google_compute_global_forwarding_rule" "cf_https" {
 
   count = "${local.count}"
 }
+
+
+
