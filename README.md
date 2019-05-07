@@ -1,7 +1,6 @@
 ## How Does One Use This?
 
-Please note that the master branch is generally *unstable*. If you are looking for something
-"tested", please consume one of our [releases](https://github.com/pivotal-cf/terraforming-gcp/releases).
+This is my own version of terraforming-gcp that paves ALL required infrastructure for both PAS, PKS and Harbor. The rest of this README is from the original link.
 
 ## What Does This Do?
 
